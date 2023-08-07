@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #button1,#button2,#button3,#button4,#button5,#button6,#button7,#button8,#button9{
+            margin: 25px;
+            padding: 32px 32px;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="button1" onclick="Click(1)">-</button>
+    <button id="button2" onclick="Click(2)">-</button>
+    <button id="button3" onclick="Click(3)">-</button>
+    <br>
+    <br>
+    <button id="button4" onclick="Click(4)">-</button>
+    <button id="button5" onclick="Click(5)">-</button>
+    <button id="button6" onclick="Click(6)">-</button>
+    <br>
+    <br>
+    <button id="button7" onclick="Click(7)">-</button>
+    <button id="button8" onclick="Click(8)">-</button>
+    <button id="button9" onclick="Click(9)">-</button>
+    <script>
+        let X = true
+        function Click(button) {
+
+            let MarkToAdd = X && "❌" || "⭕"
+
+            switch (button) {
+                case 1: {
+
+                    if (button1.innerHTML != "-") return alert("Option Already Taken")
+
+                    button1.innerHTML = MarkToAdd
+                    CheckResults(MarkToAdd)
+                    break;
+                }
+                case 2: {
+
+                    if (button2.innerHTML != "-") return alert("Option Already Taken")
+
+                    button2.innerHTML = MarkToAdd
+                    CheckResults(MarkToAdd)
+                    break;
+                }
+                case 3: {
+
+                    if (button3.innerHTML != "-") return alert("Option Already Taken")
+
+                    button3.innerHTML = MarkToAdd
+                    CheckResults(MarkToAdd)
+                    break;
+                }
+                case 4: {
+
+                    if (button4.innerHTML != "-") return alert("Option Already Taken")
+
+                    button4.innerHTML = MarkToAdd
+                    CheckResults(MarkToAdd)
+                    break;
+                }
+                case 5: {
+
+                    if (button5.innerHTML != "-") return alert("Option Already Taken")
+
+                    button5.innerHTML = MarkToAdd
+                    CheckResults(MarkToAdd)
+                    break;
+                }
+                case 6: {
+
+                    if (button6.innerHTML != "-") return alert("Option Already Taken")
+
+                    button6.innerHTML = MarkToAdd
+                    CheckResults(MarkToAdd)
+                    break;
+                }
+                case 7: {
+
+                    if (button7.innerHTML != "-") return alert("Option Already Taken")
+
+                    button7.innerHTML = MarkToAdd
+                    CheckResults(MarkToAdd)
+                    break;
+                }
+                case 8: {
+
+                    if (button8.innerHTML != "-") return alert("Option Already Taken")
+
+                    button8.innerHTML = MarkToAdd
+                    CheckResults(MarkToAdd)
+                    break;
+                }
+                case 9: {
+
+                    if (button9.innerHTML != "-") return alert("Option Already Taken")
+
+                    button9.innerHTML = MarkToAdd
+                    CheckResults(MarkToAdd)
+                    break;
+                }
+                
+            }
+            X = !X
+        }
+
+        function CheckResults(mark){
+            let b1 = button1.innerHTML
+            let b2 = button2.innerHTML
+            let b3 = button3.innerHTML
+            let b4 = button4.innerHTML
+            let b5 = button5.innerHTML
+            let b6 = button6.innerHTML
+            let b7 = button7.innerHTML
+            let b8 = button8.innerHTML
+            let b9 = button9.innerHTML
+
+            console.log(b1)
+            console.log(mark)
+
+            if(b1 == mark && b2 == mark && b3 == mark){
+                DrawWinner(mark)
+            }else if(b4 == mark && b5 == mark && b6 == mark){
+                DrawWinner(mark)
+            }else if(b7 == mark && b8 == mark && b9 == mark){
+                DrawWinner(mark)
+            }else if(b1 == mark && b4 == mark && b7 == mark){
+                DrawWinner(mark)
+            }else if(b2 == mark && b5 == mark && b8 == mark){
+                DrawWinner(mark)
+            }else if(b3 == mark && b6 == mark && b9 == mark){
+                DrawWinner(mark)
+            }else if(b1 == mark && b5 == mark && b9 == mark){
+                DrawWinner(mark)
+            }else if(b3 == mark && b5 == mark && b7 == mark){
+                DrawWinner(mark)
+            }else{
+                if(b1 != "-" && b2 != "-" && b3 != "-" && b4 != "-" && b5 != "-" && b6 != "-" && b7 != "-" && b8 != "-" && b9 != "-"){
+                    alert("Draw, Restarting.")
+                    resetGame()
+                }
+            }
+            
+        }
+        function LuaMath(min, max) {
+            let number = Math.floor(Math.random() * max) + min
+            return number
+        }
+        
+
+
+
+        function DrawWinner(mark){
+            //alert(mark + " Is The Winner")
+            let lastnumber = 0
+            let celebration = setInterval(() => {
+                let number = LuaMath(1, 4)
+                while (lastnumber == number) {
+                    number = LuaMath(1, 4)
+                }
+                lastnumber = number
+                if(number == 1) document.body.style.background = "red"
+                if(number == 2) document.body.style.background = "blue"
+                if(number == 3) document.body.style.background = "pink"
+                if(number == 4) document.body.style.background = "green"
+                
+            }, 1000);
+
+            button1.innerHTML = "👑"
+            button2.innerHTML = "👑"
+            button3.innerHTML = "👑"
+            button4.innerHTML = "👑"
+            button5.innerHTML = "👑"
+            button6.innerHTML = "👑"
+            button7.innerHTML = "👑"
+            button8.innerHTML = "👑"
+            button9.innerHTML = "👑"
+            
+
+            setTimeout(() => {
+                alert(mark + " Is The Winner\nRestarting The Game")
+                clearInterval(celebration)
+                resetGame()
+            }, 5000);
+            
+        }
+
+        function resetGame(){
+            button1.innerHTML = "-"
+            button2.innerHTML = "-"
+            button3.innerHTML = "-"
+            button4.innerHTML = "-"
+            button5.innerHTML = "-"
+            button6.innerHTML = "-"
+            button7.innerHTML = "-"
+            button8.innerHTML = "-"
+            button9.innerHTML = "-"
+            document.body.style.background = "white"
+            X = true
+        }
+    </script>
+</body>
+
+</html>

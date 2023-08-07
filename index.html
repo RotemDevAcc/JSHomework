@@ -1,11 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #movingbutton {
+            position: absolute;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div id="newdiv">Test</div>
+    <button id="movingbutton" onclick="KillButton()">Click</button>
+
+    <script>
+
+
+        function LuaMath(min, max) {
+            let number = Math.floor(Math.random() * max) + min
+            return number
+        }
+
+        let lastnumber = 0
+        setInterval(() => {
+            let number = LuaMath(1, 6)
+
+            while (lastnumber == number) {
+                number = LuaMath(1, 6)
+            }
+            lastnumber = number
+            switch (number) {
+                case 1:
+                    newdiv.style.color = "red"
+                    break;
+                case 2:
+                    newdiv.style.color = "dark"
+                    break;
+                case 3:
+                    newdiv.style.color = "gray"
+                    break;
+                case 4:
+                    newdiv.style.color = "yellow"
+                    break;
+                case 5:
+                    newdiv.style.color = "purple"
+                    break;
+                case 6:
+                    newdiv.style.color = "pink"
+                    break;
+            }
+
+        }, 500);
+
+
+        let one = 100
+        let two = 300
+        let three = 400
+        console.log(Math.min(three, one, three))
+
+        let MoveButton = setInterval(() => {
+            let x = window.innerWidth - 200
+            let y = window.innerHeight - 200
+
+            movingbutton.style.left = LuaMath(100, x) + "px"
+            movingbutton.style.top = LuaMath(100, y) + "px"
+
+        }, 1500);
+
+        function KillButton(){
+            movingbutton.style.visibility = 'hidden';
+            clearInterval(MoveButton)
+            alert("Killing Button")
+        }
+
+    </script>
 </body>
+
 </html>

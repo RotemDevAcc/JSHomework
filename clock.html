@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+</head>
+
+<body>
+    <div id="clock"></div>
+    <script>
+
+        let lastnumber = 0
+        function LuaMath(min, max) {
+            let number = Math.floor(Math.random() * max) + min
+            return number
+        }
+
+        let currentDate = new Date();
+        let time = currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds();
+        clock.innerHTML = time
+
+        setInterval(() => {
+            currentDate = new Date();
+            time = currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds();
+            clock.innerHTML = time
+        }, 1000);
+
+        setInterval(() => {
+            let number = LuaMath(1, 6)
+
+            while (lastnumber == number) {
+                number = LuaMath(1, 6)
+            }
+            switch (number) {
+                case 1:
+                    clock.style.color = "red"
+                    break;
+                case 2:
+                    clock.style.color = "dark"
+                    break;
+                case 3:
+                    clock.style.color = "gray"
+                    break;
+                case 4:
+                    clock.style.color = "yellow"
+                    break;
+                case 5:
+                    clock.style.color = "purple"
+                    break;
+                case 6:
+                    clock.style.color = "pink"
+                    break;
+            }
+        }, 1000);
+
+    </script>
+</body>
+
+</html>
