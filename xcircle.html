@@ -29,12 +29,15 @@
     <button id="button9" onclick="Click(9)">-</button>
     <script>
         let X = true
+        let Celebrating = false
         function Click(button) {
 
             let MarkToAdd = X && "❌" || "⭕"
 
             switch (button) {
                 case 1: {
+                    
+                    if(Celebrating) return alert("Someone Has Won The Game\nWait Untill Restart")
 
                     if (button1.innerHTML != "-") return alert("Option Already Taken")
 
@@ -43,6 +46,7 @@
                     break;
                 }
                 case 2: {
+                    if(Celebrating) return alert("Someone Has Won The Game\nWait Untill Restart")
 
                     if (button2.innerHTML != "-") return alert("Option Already Taken")
 
@@ -51,6 +55,7 @@
                     break;
                 }
                 case 3: {
+                    if(Celebrating) return alert("Someone Has Won The Game\nWait Untill Restart")
 
                     if (button3.innerHTML != "-") return alert("Option Already Taken")
 
@@ -59,6 +64,7 @@
                     break;
                 }
                 case 4: {
+                    if(Celebrating) return alert("Someone Has Won The Game\nWait Untill Restart")
 
                     if (button4.innerHTML != "-") return alert("Option Already Taken")
 
@@ -67,6 +73,7 @@
                     break;
                 }
                 case 5: {
+                    if(Celebrating) return alert("Someone Has Won The Game\nWait Untill Restart")
 
                     if (button5.innerHTML != "-") return alert("Option Already Taken")
 
@@ -75,6 +82,7 @@
                     break;
                 }
                 case 6: {
+                    if(Celebrating) return alert("Someone Has Won The Game\nWait Untill Restart")
 
                     if (button6.innerHTML != "-") return alert("Option Already Taken")
 
@@ -83,6 +91,7 @@
                     break;
                 }
                 case 7: {
+                    if(Celebrating) return alert("Someone Has Won The Game\nWait Untill Restart")
 
                     if (button7.innerHTML != "-") return alert("Option Already Taken")
 
@@ -91,6 +100,7 @@
                     break;
                 }
                 case 8: {
+                    if(Celebrating) return alert("Someone Has Won The Game\nWait Untill Restart")
 
                     if (button8.innerHTML != "-") return alert("Option Already Taken")
 
@@ -99,6 +109,7 @@
                     break;
                 }
                 case 9: {
+                    if(Celebrating) return alert("Someone Has Won The Game\nWait Untill Restart")
 
                     if (button9.innerHTML != "-") return alert("Option Already Taken")
 
@@ -121,9 +132,6 @@
             let b7 = button7.innerHTML
             let b8 = button8.innerHTML
             let b9 = button9.innerHTML
-
-            console.log(b1)
-            console.log(mark)
 
             if(b1 == mark && b2 == mark && b3 == mark){
                 DrawWinner(mark)
@@ -159,6 +167,7 @@
 
         function DrawWinner(mark){
             //alert(mark + " Is The Winner")
+            Celebrating = true
             let lastnumber = 0
             let celebration = setInterval(() => {
                 let number = LuaMath(1, 4)
@@ -204,6 +213,7 @@
             button9.innerHTML = "-"
             document.body.style.background = "white"
             X = true
+            Celebrating = false
         }
     </script>
 </body>
