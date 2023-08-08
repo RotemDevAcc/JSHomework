@@ -285,23 +285,25 @@
             Celebrating = true
             let lastnumber = 0
             let celebration = setInterval(() => {
-                let number = LuaMath(1, 4)
+                let number = LuaMath(1, 6)
                 while (lastnumber == number) {
-                    number = LuaMath(1, 4)
+                    number = LuaMath(1, 6)
                 }
                 lastnumber = number
                 if (number == 1) document.body.style.background = "red"
                 if (number == 2) document.body.style.background = "blue"
                 if (number == 3) document.body.style.background = "pink"
-                if (number == 4) document.body.style.background = "green"
+                if (number == 4) document.body.style.background = "gray"
+                if (number == 5) document.body.style.background = "yellow"
+                if (number == 6) document.body.style.background = "purple"
 
-            }, 1000);
+            }, 500);
 
             button1.innerHTML = "👑"
             button2.innerHTML = "👑"
             button3.innerHTML = "👑"
             button4.innerHTML = "👑"
-            button5.innerHTML = "👑"
+            button5.innerHTML = mark
             button6.innerHTML = "👑"
             button7.innerHTML = "👑"
             button8.innerHTML = "👑"
@@ -331,9 +333,9 @@
             Celebrating = false
         }
     </script>
-    <audio id="winsound" src="winner.wav"></audio>
-    <audio id="cantdosound" src="cantdo.wav"></audio>
-    <audio id="selectsound" src="blop.wav"></audio>
+    <audio id="winsound" src="sounds/winner.wav"></audio>
+    <audio id="cantdosound" src="sounds/cantdo.wav"></audio>
+    <audio id="selectsound" src="sounds/blop.wav"></audio>
 </body>
 
 </html>
