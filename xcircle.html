@@ -6,27 +6,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #button1,#button2,#button3,#button4,#button5,#button6,#button7,#button8,#button9{
-            margin: 25px;
-            padding: 32px 32px;
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+
+        #board {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+
+        button {
+            width: 100px;
+            height: 100px;
+            font-size: 24px;
+            border: none;
+            cursor: pointer;
+            background-color: #333;
+            color: #ffffff;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        #button1,
+        #button2,
+        #button3,
+        #button4,
+        #button5,
+        #button6,
+        #button7,
+        #button8,
+        #button9 {
+            margin: 0;
+        }
+
+        .winner {
+            background-color: #ff9800;
+            color: #1a1a1a;
         }
     </style>
 </head>
 
 <body>
-    <button id="button1" onclick="Click(1)">-</button>
-    <button id="button2" onclick="Click(2)">-</button>
-    <button id="button3" onclick="Click(3)">-</button>
-    <br>
-    <br>
-    <button id="button4" onclick="Click(4)">-</button>
-    <button id="button5" onclick="Click(5)">-</button>
-    <button id="button6" onclick="Click(6)">-</button>
-    <br>
-    <br>
-    <button id="button7" onclick="Click(7)">-</button>
-    <button id="button8" onclick="Click(8)">-</button>
-    <button id="button9" onclick="Click(9)">-</button>
+    <div id="board">
+        <button id="button1" onclick="Click(1)">-</button>
+        <button id="button2" onclick="Click(2)">-</button>
+        <button id="button3" onclick="Click(3)">-</button>
+        <button id="button4" onclick="Click(4)">-</button>
+        <button id="button5" onclick="Click(5)">-</button>
+        <button id="button6" onclick="Click(6)">-</button>
+        <button id="button7" onclick="Click(7)">-</button>
+        <button id="button8" onclick="Click(8)">-</button>
+        <button id="button9" onclick="Click(9)">-</button>
+    </div>
     <script>
         let X = true
         let Celebrating = false
@@ -36,93 +78,157 @@
 
             switch (button) {
                 case 1: {
-                    
-                    if(Celebrating) return alert("Someone Has Won The Game\nWait Untill Restart")
 
-                    if (button1.innerHTML != "-") return alert("Option Already Taken")
+                    if (Celebrating) {
+                        PlaySound("cantdosound")
+                        alert("Someone Has Won The Game\nWait Untill Restart");
+                        return
+                    }
+
+
+                    if (button1.innerHTML != "-") {
+                        PlaySound("cantdosound")
+                        return
+                    }
 
                     button1.innerHTML = MarkToAdd
                     CheckResults(MarkToAdd)
                     break;
                 }
                 case 2: {
-                    if(Celebrating) return alert("Someone Has Won The Game\nWait Untill Restart")
+                    if (Celebrating) {
+                        PlaySound("cantdosound")
+                        alert("Someone Has Won The Game\nWait Untill Restart");
+                        return
+                    }
 
-                    if (button2.innerHTML != "-") return alert("Option Already Taken")
+                    if (button2.innerHTML != "-") {
+                        PlaySound("cantdosound")
+                        return
+                    }
 
                     button2.innerHTML = MarkToAdd
                     CheckResults(MarkToAdd)
                     break;
                 }
                 case 3: {
-                    if(Celebrating) return alert("Someone Has Won The Game\nWait Untill Restart")
+                    if (Celebrating) {
+                        PlaySound("cantdosound")
+                        alert("Someone Has Won The Game\nWait Untill Restart");
+                        return
+                    }
 
-                    if (button3.innerHTML != "-") return alert("Option Already Taken")
+                    if (button3.innerHTML != "-") {
+                        PlaySound("cantdosound")
+                        return
+                    }
 
                     button3.innerHTML = MarkToAdd
                     CheckResults(MarkToAdd)
                     break;
                 }
                 case 4: {
-                    if(Celebrating) return alert("Someone Has Won The Game\nWait Untill Restart")
+                    if (Celebrating) {
+                        PlaySound("cantdosound")
+                        alert("Someone Has Won The Game\nWait Untill Restart");
+                        return
+                    }
 
-                    if (button4.innerHTML != "-") return alert("Option Already Taken")
+                    if (button4.innerHTML != "-") {
+                        PlaySound("cantdosound")
+                        return
+                    }
 
                     button4.innerHTML = MarkToAdd
                     CheckResults(MarkToAdd)
                     break;
                 }
                 case 5: {
-                    if(Celebrating) return alert("Someone Has Won The Game\nWait Untill Restart")
+                    if (Celebrating) {
+                        PlaySound("cantdosound")
+                        alert("Someone Has Won The Game\nWait Untill Restart");
+                        return
+                    }
 
-                    if (button5.innerHTML != "-") return alert("Option Already Taken")
+                    if (button5.innerHTML != "-") {
+                        PlaySound("cantdosound")
+                        return
+                    }
 
                     button5.innerHTML = MarkToAdd
                     CheckResults(MarkToAdd)
                     break;
                 }
                 case 6: {
-                    if(Celebrating) return alert("Someone Has Won The Game\nWait Untill Restart")
+                    if (Celebrating) {
+                        PlaySound("cantdosound")
+                        alert("Someone Has Won The Game\nWait Untill Restart");
+                        return
+                    }
 
-                    if (button6.innerHTML != "-") return alert("Option Already Taken")
+                    if (button6.innerHTML != "-") {
+                        PlaySound("cantdosound")
+                        return
+                    }
 
                     button6.innerHTML = MarkToAdd
                     CheckResults(MarkToAdd)
                     break;
                 }
                 case 7: {
-                    if(Celebrating) return alert("Someone Has Won The Game\nWait Untill Restart")
+                    if (Celebrating) {
+                        PlaySound("cantdosound")
+                        alert("Someone Has Won The Game\nWait Untill Restart");
+                        return
+                    }
 
-                    if (button7.innerHTML != "-") return alert("Option Already Taken")
+                    if (button7.innerHTML != "-") {
+                        PlaySound("cantdosound")
+                        return
+                    }
 
                     button7.innerHTML = MarkToAdd
                     CheckResults(MarkToAdd)
                     break;
                 }
                 case 8: {
-                    if(Celebrating) return alert("Someone Has Won The Game\nWait Untill Restart")
+                    if (Celebrating) {
+                        PlaySound("cantdosound")
+                        alert("Someone Has Won The Game\nWait Untill Restart");
+                        return
+                    }
 
-                    if (button8.innerHTML != "-") return alert("Option Already Taken")
+                    if (button8.innerHTML != "-") {
+                        PlaySound("cantdosound")
+                        return
+                    }
 
                     button8.innerHTML = MarkToAdd
                     CheckResults(MarkToAdd)
                     break;
                 }
                 case 9: {
-                    if(Celebrating) return alert("Someone Has Won The Game\nWait Untill Restart")
+                    if (Celebrating) {
+                        PlaySound("cantdosound")
+                        alert("Someone Has Won The Game\nWait Untill Restart");
+                        return
+                    }
 
-                    if (button9.innerHTML != "-") return alert("Option Already Taken")
+                    if (button9.innerHTML != "-") {
+                        PlaySound("cantdosound")
+                        return
+                    }
 
                     button9.innerHTML = MarkToAdd
                     CheckResults(MarkToAdd)
                     break;
                 }
-                
+
             }
             X = !X
         }
 
-        function CheckResults(mark){
+        function CheckResults(mark) {
             let b1 = button1.innerHTML
             let b2 = button2.innerHTML
             let b3 = button3.innerHTML
@@ -133,40 +239,49 @@
             let b8 = button8.innerHTML
             let b9 = button9.innerHTML
 
-            if(b1 == mark && b2 == mark && b3 == mark){
+            if (b1 == mark && b2 == mark && b3 == mark) {
                 DrawWinner(mark)
-            }else if(b4 == mark && b5 == mark && b6 == mark){
+            } else if (b4 == mark && b5 == mark && b6 == mark) {
                 DrawWinner(mark)
-            }else if(b7 == mark && b8 == mark && b9 == mark){
+            } else if (b7 == mark && b8 == mark && b9 == mark) {
                 DrawWinner(mark)
-            }else if(b1 == mark && b4 == mark && b7 == mark){
+            } else if (b1 == mark && b4 == mark && b7 == mark) {
                 DrawWinner(mark)
-            }else if(b2 == mark && b5 == mark && b8 == mark){
+            } else if (b2 == mark && b5 == mark && b8 == mark) {
                 DrawWinner(mark)
-            }else if(b3 == mark && b6 == mark && b9 == mark){
+            } else if (b3 == mark && b6 == mark && b9 == mark) {
                 DrawWinner(mark)
-            }else if(b1 == mark && b5 == mark && b9 == mark){
+            } else if (b1 == mark && b5 == mark && b9 == mark) {
                 DrawWinner(mark)
-            }else if(b3 == mark && b5 == mark && b7 == mark){
+            } else if (b3 == mark && b5 == mark && b7 == mark) {
                 DrawWinner(mark)
-            }else{
-                if(b1 != "-" && b2 != "-" && b3 != "-" && b4 != "-" && b5 != "-" && b6 != "-" && b7 != "-" && b8 != "-" && b9 != "-"){
+            } else {
+                if (b1 != "-" && b2 != "-" && b3 != "-" && b4 != "-" && b5 != "-" && b6 != "-" && b7 != "-" && b8 != "-" && b9 != "-") {
                     alert("Draw, Restarting.")
                     resetGame()
+                    return
                 }
             }
-            
+            PlaySound("selectsound")
+
         }
         function LuaMath(min, max) {
             let number = Math.floor(Math.random() * max) + min
             return number
         }
-        
+
+        function PlaySound(sound) {
+            if (!sound) return
+            var audio = document.getElementById(sound);
+            audio.play();
+        }
 
 
 
-        function DrawWinner(mark){
+        function DrawWinner(mark) {
+
             //alert(mark + " Is The Winner")
+            PlaySound("winsound")
             Celebrating = true
             let lastnumber = 0
             let celebration = setInterval(() => {
@@ -175,11 +290,11 @@
                     number = LuaMath(1, 4)
                 }
                 lastnumber = number
-                if(number == 1) document.body.style.background = "red"
-                if(number == 2) document.body.style.background = "blue"
-                if(number == 3) document.body.style.background = "pink"
-                if(number == 4) document.body.style.background = "green"
-                
+                if (number == 1) document.body.style.background = "red"
+                if (number == 2) document.body.style.background = "blue"
+                if (number == 3) document.body.style.background = "pink"
+                if (number == 4) document.body.style.background = "green"
+
             }, 1000);
 
             button1.innerHTML = "👑"
@@ -191,17 +306,17 @@
             button7.innerHTML = "👑"
             button8.innerHTML = "👑"
             button9.innerHTML = "👑"
-            
+
 
             setTimeout(() => {
                 alert(mark + " Is The Winner\nRestarting The Game")
                 clearInterval(celebration)
                 resetGame()
             }, 5000);
-            
+
         }
 
-        function resetGame(){
+        function resetGame() {
             button1.innerHTML = "-"
             button2.innerHTML = "-"
             button3.innerHTML = "-"
@@ -211,11 +326,14 @@
             button7.innerHTML = "-"
             button8.innerHTML = "-"
             button9.innerHTML = "-"
-            document.body.style.background = "white"
+            document.body.style.background = "#1a1a1a"
             X = true
             Celebrating = false
         }
     </script>
+    <audio id="winsound" src="winner.wav"></audio>
+    <audio id="cantdosound" src="cantdo.wav"></audio>
+    <audio id="selectsound" src="blop.wav"></audio>
 </body>
 
 </html>
